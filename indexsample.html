@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale = 1, maximum-scale=1">
+    <meta charset="utf-8">
+    <title>
+        自動排程
+    </title>
+
+    <script type="text/javascript" charset="utf-8" async defer>
+        var timer; //全域變數
+
+        function init() {
+            timer = document.getElementById("timer"); //取得timer的位址
+            //countdown 是一個函式, 1000ms = 1sec 
+            window.setTimeout(countdown, 1000); //settimerout 超時函數
+        }
+
+        function countdown() {
+            timer.innerHTML = timer.innerHTML - 1; // 內部的值減1
+            if (timer.innerHTML > 0) {
+                window.setTimeout(countdown, 1000);
+            } else {
+                alert("Time out");
+            }
+        }
+    </script>
+
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body onload="init();">
+    <!-- 是畫面載入onload時, 執行"“裡面的動作 -->
+    <div>
+
+    </div>
+    <span id="timer"> 3  </span>
+    <!-- 3 = innerHTML 裡面值 -->
+</body>
+
+</html>
